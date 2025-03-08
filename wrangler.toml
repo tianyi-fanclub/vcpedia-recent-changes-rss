@@ -1,0 +1,19 @@
+#:schema node_modules/wrangler/config-schema.json
+# Cloudflare Workers configuration file
+# Docs: https://developers.cloudflare.com/workers/configuration
+name = "vcpedia-recent-changes-rss"
+main = "src/index.ts"
+compatibility_date = "2024-10-22"
+account_id = "7bdb185d6ec37e17c46d899adffc9bc5"
+workers_dev = false
+routes = [
+  { pattern = "vcpedia-recent-changes-rss.tianyifan.club", custom_domain = true }
+]
+
+[vars]
+ACCOUNT_ID = "7bdb185d6ec37e17c46d899adffc9bc5"
+ENDPOINT = "https://vcpedia.cn/"
+
+[observability]
+enabled = true
+head_sampling_rate = 1
